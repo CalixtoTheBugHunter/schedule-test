@@ -13,17 +13,26 @@
                 :style="setCalendarSpanSize" />
             <div class="TheSchedule__calendar-day" v-for="(day, i) in months[4].days" :key="`dayOfMonth${i}`">
                 {{ day }}
+                <div v-if="checkDateInDataNonEmpty(day)">
+                    <base-reminder v-for="reminder in reminders(day)" :key="reminder.id" :title="reminder.title"/>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('schedule')
+
 import weeksDays from './utils/weeks'
 import months from './utils/months'
 
+import { BaseReminder } from '@/components/atoms'
+
 export default {
     name: 'TheSchedule',
+    components: { BaseReminder },
     data() {
         return {
             weeksDays,
@@ -32,6 +41,7 @@ export default {
         }
     },
     computed: {
+        ...mapGetters(['checkDateInData', 'getRemindersByDay']),
         setFirstDateWeekDay() {
             return new Date(this.baseDate).getDay()
         },
@@ -40,6 +50,14 @@ export default {
         },
         setCalendarSpanSize() {
             return `width: calc(100px * ${this.setFirstDateWeekDay + 1} + ${this.setFirstDateWeekDay}px)`
+        }
+    },
+    methods: {
+        checkDateInDataNonEmpty(day) {
+            return this.checkDateInData({ month: 4, date: day}) > 0
+        },
+        reminders(day) {
+            return this.getRemindersByDay({ month: 4, date: day}).reminders
         }
     }
 }
