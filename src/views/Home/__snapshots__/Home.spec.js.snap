@@ -3,8 +3,11 @@
 exports[`Home Component not changed 1`] = `
 <div class="Home">
   <section class="Home__schedule">
+    <base-button-stub label="New reminder"></base-button-stub>
     <the-schedule-stub></the-schedule-stub>
   </section>
-  <section class="Home__settings">Here is schedule settings</section>
+  <section class="Home__settings">
+    <home-reminder-stub></home-reminder-stub>
+  </section>
 </div>
 `;

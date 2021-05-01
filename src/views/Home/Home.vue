@@ -1,17 +1,24 @@
 <template>
   <div class="Home">
     <section class="Home__schedule">
+      <base-button label="New reminder" />
       <the-schedule />
     </section>
-    <section class="Home__settings">Here is schedule settings</section>
+    <section class="Home__settings">
+      <home-reminder />
+    </section>
   </div>
 </template>
 
 <script>
+import { BaseButton } from '@/components/atoms'
 import { TheSchedule } from '@/components/organisms'
+import HomeReminder from './HomeReminder/HomeReminder.vue'
+
+
 export default {
   name: 'Home',
-  components: { TheSchedule }
+  components: { BaseButton, TheSchedule, HomeReminder }
 }
 </script>
 
