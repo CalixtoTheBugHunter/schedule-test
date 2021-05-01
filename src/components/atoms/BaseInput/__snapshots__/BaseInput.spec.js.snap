@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseInput Component not changed 1`] = `
+<div class="BaseInput">
+  <!--v-if--><input class="BaseInput__input">
+  <!--v-if-->
+</div>
+`;
