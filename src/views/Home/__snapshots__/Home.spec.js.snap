@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component not changed 1`] = `
+<div class="Home">
+  <section class="Home__schedule">Here is schedule</section>
+  <section class="Home__settings">Here is schedule settings</section>
+</div>
+`;
