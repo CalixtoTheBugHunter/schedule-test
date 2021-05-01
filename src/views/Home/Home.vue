@@ -1,11 +1,11 @@
 <template>
   <div class="Home">
     <section class="Home__schedule">
-      <base-button label="New reminder" />
+      <base-button label="New reminder" @click="onNewReminderClick" />
       <the-schedule />
     </section>
     <section class="Home__settings">
-      <home-reminder />
+      <home-reminder v-if="showHomeReminder" @close="emittedHomeReminder" />
     </section>
   </div>
 </template>
@@ -18,7 +18,23 @@ import HomeReminder from './HomeReminder/HomeReminder.vue'
 
 export default {
   name: 'Home',
-  components: { BaseButton, TheSchedule, HomeReminder }
+  components: { BaseButton, TheSchedule, HomeReminder },
+  data() {
+    return {
+      showHomeReminder: false
+    }
+  },
+  methods: {
+    handleShowReminder(value) {
+      this.showHomeReminder = value
+    },
+    onNewReminderClick() {
+      this.handleShowReminder(true)
+    },
+    emittedHomeReminder() {
+      this.handleShowReminder(false)
+    }
+  }
 }
 </script>
 

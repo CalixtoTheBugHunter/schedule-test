@@ -7,11 +7,8 @@
             ref="input"
             class="BaseInput__input"
             v-bind="$attrs"
-            :value="value"
-            @focus="onFocus"
-            @blur="onLostFocus"
-            @input="debounceInput"
-            @keyup="onKeyup"
+            :value="modelValue"
+            @input="onInput"
             @keyup.enter="inputEnterHandler"
         />
 
@@ -26,17 +23,13 @@
 export default {
     name: 'BaseInput',
     props: {
-        value: {
+        modelValue: {
             type: [String, Number],
             required: true
         },
         label: {
             type: String,
             default: ''
-        },
-        debounceTime: {
-            type: Number,
-            default: 500
         },
         isInvalid: {
             type: Boolean,
@@ -47,40 +40,15 @@ export default {
             default: ''
         }
     },
-    data() {
-        return {
-            debounce: null,
-            focus: false
-        }
-    },
+    emits: ['update:modelValue'],
     computed: {
         BaseInputClass() {
             return { 'BaseInput--invalid': !!this.isInvalid }
         },
     },
     methods: {
-        onFocus() {
-            this.focus = !this.focus
-        },
-        onLostFocus() {
-            this.onFocus()
-            this.$emit('blur')
-        },
-        onKeyup(e) {
-            let value = e ? e.target.value : this.value
-            this.$emit('input', value)
-        },
-        setFocus() {
-            this.$refs.input.focus()
-        },
-        debounceInput(e) {
-            const val = e.target.value
-            this.$emit('input', val)
-            clearTimeout(this.debounce)
-            this.debounce = setTimeout(() =>
-                this.$emit('debounce', val),
-                this.debounceTime
-            )
+        onInput(e) {
+            this.$emit('update:modelValue', e.target.value)
         },
         inputEnterHandler() {
             this.$emit('enter')

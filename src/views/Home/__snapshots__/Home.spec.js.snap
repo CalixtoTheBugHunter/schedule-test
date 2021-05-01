@@ -7,7 +7,7 @@ exports[`Home Component not changed 1`] = `
     <the-schedule-stub></the-schedule-stub>
   </section>
   <section class="Home__settings">
-    <home-reminder-stub></home-reminder-stub>
+    <!--v-if-->
   </section>
 </div>
 `;

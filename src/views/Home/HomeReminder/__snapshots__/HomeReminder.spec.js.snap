@@ -2,10 +2,10 @@
 
 exports[`HomeReminder Component not changed 1`] = `
 <section class="HomeReminder">
-  <base-input-stub value="" placeholder="Untitled"></base-input-stub>
-  <base-datepicker-stub value="" placeholder="Date"></base-datepicker-stub>
-  <base-input-stub value="" placeholder="City"></base-input-stub>
-  <base-input-stub value="" placeholder="Color"></base-input-stub>
+  <base-input-stub modelvalue="" placeholder="Untitled"></base-input-stub>
+  <base-datepicker-stub placeholder="Date"></base-datepicker-stub>
+  <base-input-stub modelvalue="" placeholder="City"></base-input-stub>
+  <base-input-stub modelvalue="" placeholder="Color"></base-input-stub>
   <base-button-stub label="Save reminder"></base-button-stub>
 </section>
 `;
