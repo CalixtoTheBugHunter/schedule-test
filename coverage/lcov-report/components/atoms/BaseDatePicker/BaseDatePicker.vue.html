@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/atoms/BaseButton/BaseButton.vue</title>
+    <title>Code coverage report for components/atoms/BaseDatepicker/BaseDatepicker.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -18,7 +18,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">components/atoms/BaseButton</a> BaseButton.vue</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">components/atoms/BaseDatepicker</a> BaseDatepicker.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -38,7 +38,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -104,27 +104,7 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,23 +120,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,6 +134,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,72 +153,54 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;component
-    :is="tag"
-    type="button"
-    v-bind="$attrs"
-    class="BaseButton"
-    :disabled="disabled"
-    @click="click"
-  &gt;
-    &lt;span v-if="!!label" class="BaseButton__Text"&gt;
-      {{ label }}
-    &lt;/span&gt;
-  &lt;/component&gt;
+    &lt;div class="BaseDatepicker"&gt;
+        &lt;label v-if="!!label" class="BaseDatepicker__label"&gt;
+            {{ label }}
+        &lt;/label&gt;
+        &lt;datepicker
+            v-model="datepickerModel"
+            v-bind="$attrs"
+        /&gt;
+    &lt;/div&gt;
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
+// Documentation here - https://icehaunter.github.io/vue3-datepicker/
+import Datepicker from 'vue3-datepicker'
+&nbsp;
 export default {
-  name: 'BaseButton',
-  props: {
-    tag: {
-      type: String,
-      default: 'button',
-      validator: val =&gt; ['button', 'a'].includes(val)
+    name: 'BaseDatepicker',
+    components: { Datepicker },
+    props: {
+        label: {
+            type: String,
+            default: ''
+        },
+        value: {
+            type: [String, Number],
+            default: null
+        }
     },
-    label: {
-      type: String,
-      default: ''
-    },
-    disabled: {
-      type: Boolean,
-      default: false
+    data() {
+        return {
+            datepickerModel: this.value
+        }
     }
-  },
-  methods: {
-    click(e) {
-      this.$emit('click', e)
-    }
-  }
 }
 &lt;/script&gt;
 &nbsp;
 &lt;style lang="scss" scoped&gt;
-.BaseButton {
-  height: 40px;
-  -webkit-appearance: none;
-  display: flex;
-  background: inherit;
-  padding: 0 10px;
-  cursor: pointer;
-  align-items: center;
-  position: relative;
-  white-space: nowrap;
-  background: $color-primary;
-  border-radius: 10px;
-  border: 0 none;
-  &amp;:hover {
-    filter: brightness(90%) contrast(150%);
-  }
-  &amp;__Text {
-    font-size: 16px;
-    color: $color-white;
-    text-align: center;
-    display: block;
-    width: 100%;
-  }
+.BaseDatepicker {
+    color: $color-primary;
+    &amp;__label {
+        color: $color-light;
+        font-size: 16px;
+        transition: transform 0.2s;
+        pointer-events: none;
+    }
 }
-&lt;/style&gt;</pre></td></tr></table></pre>
+&lt;/style&gt;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

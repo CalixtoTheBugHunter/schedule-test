@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1619835614959" clover="3.2.0">
-  <project timestamp="1619835614959" name="All files">
-    <metrics statements="21" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="6" elements="35" coveredelements="14" complexity="0" loc="21" ncloc="21" packages="3" files="3" classes="3"/>
+<coverage generated="1619842437719" clover="3.2.0">
+  <project timestamp="1619842437719" name="All files">
+    <metrics statements="30" coveredstatements="20" conditionals="2" coveredconditionals="0" methods="16" coveredmethods="11" elements="48" coveredelements="31" complexity="0" loc="30" ncloc="30" packages="5" files="5" classes="5"/>
     <package name="components.atoms.BaseButton">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="BaseButton.vue" path="/Users/paulocalixto/Documents/Projetos/Schedule/schedule-test/src/components/atoms/BaseButton/BaseButton.vue">
@@ -9,6 +9,15 @@
         <line num="17" count="1" type="stmt"/>
         <line num="23" count="3" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.atoms.BaseDatepicker">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="BaseDatepicker.vue" path="/Users/paulocalixto/Documents/Projetos/Schedule/schedule-test/src/components/atoms/BaseDatepicker/BaseDatepicker.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.atoms.BaseInput">
@@ -32,13 +41,25 @@
         <line num="86" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="views">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Home.vue" path="/Users/paulocalixto/Documents/Projetos/Schedule/schedule-test/src/views/Home.vue">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+    <package name="components.organisms.TheSchedule">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="TheSchedule.vue" path="/Users/paulocalixto/Documents/Projetos/Schedule/schedule-test/src/components/organisms/TheSchedule/TheSchedule.vue">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="views.Home">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Home.vue" path="/Users/paulocalixto/Documents/Projetos/Schedule/schedule-test/src/views/Home/Home.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
       </file>
     </package>
   </project>

@@ -27,7 +27,7 @@ describe('BaseInput', () => {
     })
   })
 
-  it('Methods - inputEnterHandler', () => {
+  it('Methods - inputEnterHandler', () => { 
     WRAPPER.vm.inputEnterHandler()
     expect(WRAPPER.emitted('enter')).toBeTruthy()
   })
