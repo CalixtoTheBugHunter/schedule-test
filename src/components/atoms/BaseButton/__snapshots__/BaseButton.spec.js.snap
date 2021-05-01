@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseButton Component not changed 1`] = `
+<button type="button" class="BaseButton">
+  <!--v-if-->
+</button>
+`;
