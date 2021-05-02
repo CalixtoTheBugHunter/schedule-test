@@ -60,6 +60,7 @@ export default {
 <style lang="scss" scoped>
 .BaseInput {
     position: relative;
+    width: 100%;
     &[disabled] {
         opacity: 0.5;
         cursor: not-allowed;
@@ -75,10 +76,11 @@ export default {
         pointer-events: none;
     }
     &__input {
-        border: 1px solid $color-light;
-        padding: 9px 0;
+        padding: $space-sm 0;
         width: 100%;
         background: transparent;
+        color: $color-white;
+        font-size: 16px;
         .BaseInput--invalid & {
             color: $color-primary;
             border-bottom: 1px solid $color-primary;
