@@ -4,6 +4,7 @@
     type="button"
     v-bind="$attrs"
     class="BaseButton"
+    :class="BaseButtonClasses"
     :disabled="disabled"
     @click="click"
   >
@@ -29,6 +30,16 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    theme: {
+      type: String,
+      default: 'primary',
+      validator: val => ['primary', 'secondary'].includes(val)
+    }
+  },
+  computed: {
+    BaseButtonClasses() {
+      return [`BaseButton--${this.theme}`]
     }
   },
   methods: {
@@ -50,11 +61,16 @@ export default {
   align-items: center;
   position: relative;
   white-space: nowrap;
-  background: $color-primary;
   border-radius: 5px;
   border: 0 none;
   &:hover {
     filter: brightness(90%) contrast(150%);
+  }
+  &--primary {
+    background: $color-primary;
+  }
+  &--secondary {
+    background: $color-secondary;
   }
   &__Text {
     font-size: 16px;

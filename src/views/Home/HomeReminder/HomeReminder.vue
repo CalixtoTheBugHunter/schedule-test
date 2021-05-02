@@ -5,7 +5,7 @@
         <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
         <reminder-weather :value="weather" v-if="weather?.main" />
         <base-input v-model="color" placeholder="Color" />
-        <base-button label="Save reminder" @click="onSaveReminderClick"/>
+        <base-button theme="secondary" label="Save reminder" @click="onSaveReminderClick"/>
     </section>
 </template>
 
@@ -123,6 +123,12 @@ export default {
 
 <style lang="scss" scoped>
 .HomeReminder {
-    color: $color-primary;
+    padding: $space-lg;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    gap: $space-md;
+    width: 100%;
+    align-items: flex-end;
 }
 </style>

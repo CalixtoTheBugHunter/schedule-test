@@ -84,6 +84,8 @@ export default {
     background: $color-black;
     height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
   }
 }
 </style>
