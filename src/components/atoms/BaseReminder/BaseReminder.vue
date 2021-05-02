@@ -1,5 +1,5 @@
 <template>
-    <div class="BaseReminder">
+    <div class="BaseReminder" :style="BaseReminderStyles" @click="onClick">
         {{ title }}
     </div>
 </template>
@@ -11,6 +11,21 @@ export default {
         title: {
             type: String,
             required: true
+        },
+        color: {
+            type: String,
+            default: '#000'
+        }
+    },
+    emits: ['click'],
+    computed: {
+        BaseReminderStyles() {
+            return `background: ${this.color}`
+        }
+    },
+    methods: {
+        onClick() {
+            this.$emit('click')
         }
     }
 }
@@ -18,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .BaseReminder {
-    color: $color-black;
+    color: $color-white;
+    cursor: pointer;
 }
 </style>

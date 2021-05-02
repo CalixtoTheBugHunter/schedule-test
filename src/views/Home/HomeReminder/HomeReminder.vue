@@ -1,6 +1,6 @@
 <template>
     <section class="HomeReminder">
-        <base-input v-model="title" placeholder="Untitled" max-length="30"/>
+        <base-input v-model="title" placeholder="Untitled" maxlength="30"/>
         <base-datepicker v-model="date" placeholder="Date" />
         <base-input v-model="city" placeholder="City" />
         <base-input v-model="color" placeholder="Color" />
@@ -18,7 +18,11 @@ export default {
     components: { BaseButton, BaseDatepicker, BaseInput },
     name: 'HomeReminder',
     props: {
-        id: [String, Number]
+        id: [String, Number],
+        editData: {
+            type: Object,
+            default: () => {}
+        }
     },
     emits: ['close'],
     data() {
@@ -26,17 +30,18 @@ export default {
             uniqueId: this.id,
             title: '',
             date: null,
+            oldDate: null,
             city: '',
             color: ''
         }
     },
     computed: {
-        ...mapGetters(['checkMonthInData', 'checkDateInData', 'checkReminderId']),
-        month() {
-            return this.date ? this.date.getMonth() : null
-        },
+        ...mapGetters(['hasDateInData', 'hasReminderId']),
         day() {
-            return this.date ? this.date.getDate() : null
+            return this.date ? Intl.DateTimeFormat('en-US').format(this.date) : null
+        },
+        oldDay() {
+            return this.oldDate ? Intl.DateTimeFormat('en-US').format(this.oldDate) : null
         },
         validations() {
             return this.title !== '' && this.city !== ''
@@ -44,29 +49,36 @@ export default {
     },
     mounted() {
         this.setUniqueId()
+        this.setEditData()
     },
     methods: {
         ...mapActions([
-            'createMonth',
             'createDay',
             'createReminder',
-            'updateReminder'
+            'updateReminder',
+            'deleteReminder'
         ]),
+        setUniqueId() {
+            this.uniqueId = this.id ? this.id : uuid.v1()
+        },
+        setEditData() {
+            if(this.editData !== {}) {
+                this.title = this.editData.title
+                this.date = this.editData.date
+                this.oldDate = this.editData.date
+                this.city = this.editData.city
+                this.color = this.editData.color
+            }
+        },
         async onSaveReminderClick() {
             if(this.date) {
-                await this.updateOrCreateMonth()
                 await this.updateOrCreateDate()
                 await this.updateOrCreateReminder()
             }
         },
-        setUniqueId() {
-            this.uniqueId = this.id ? this.id : uuid.v1()
-        },
         updateOrCreateReminder() {
             const PAYLOAD = {
-                month: this.month,
                 date: this.day,
-                id: this.uniqueId,
                 result: {
                     id: this.uniqueId,
                     title: this.title,
@@ -76,37 +88,23 @@ export default {
                 }
             }
 
-            if (this.validations) {
-                if(this.checkReminderId(PAYLOAD) === 0) {
-                    this.createReminder(PAYLOAD)
-                    this.$emit('close')
-                } else {
-                    this.updateReminder(PAYLOAD)
-                    this.$emit('close')
-                }
-            }
+            if (this.validations)
+                return this.hasReminderId(PAYLOAD)
+                    ? this.handleReminder('updateReminder', PAYLOAD)
+                    : this.handleReminder('createReminder', PAYLOAD)
                 
         },
-        updateOrCreateMonth() {
-            if (this.checkMonthInData(this.month) === 0)
-                this.createMonth({
-                    month: this.month,
-                    days: []
-                })
+
+        handleReminder(action, payload) {
+            if(this.oldDate)
+                this.deleteReminder({date: this.oldDay, result: { id: this.uniqueId }})
+            this[action](payload)
+            this.$emit('close')
         },
+
         updateOrCreateDate() {
-            const PAYLOAD = { 
-                month: this.month,
-                date: this.day
-            }
-            if(this.checkDateInData(PAYLOAD) === 0)
-                this.createDay({
-                    month: this.month,
-                    result: {
-                        date: this.day,
-                        reminders: []
-                    }
-                })
+            if(!this.hasDateInData(this.day))
+                this.createDay(this.day)
         }
     }
 }

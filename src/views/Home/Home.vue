@@ -2,10 +2,14 @@
   <div class="Home">
     <section class="Home__schedule">
       <base-button label="New reminder" @click="onNewReminderClick" />
-      <the-schedule />
+      <the-schedule @edit="onEdit($event)" />
     </section>
     <section class="Home__settings">
-      <home-reminder v-if="showHomeReminder" @close="emittedHomeReminder" />
+      <home-reminder 
+        v-if="showHomeReminder" 
+        @close="emittedHomeReminder" 
+        :id="editId" 
+        :editData="editData" />
     </section>
   </div>
 </template>
@@ -21,7 +25,9 @@ export default {
   components: { BaseButton, TheSchedule, HomeReminder },
   data() {
     return {
-      showHomeReminder: false
+      showHomeReminder: false,
+      editData: '',
+      editId: null
     }
   },
   methods: {
@@ -33,6 +39,11 @@ export default {
     },
     emittedHomeReminder() {
       this.handleShowReminder(false)
+    },
+    onEdit(e) {
+      this.editId = e.id
+      this.editData = e
+      this.handleShowReminder(true)
     }
   }
 }

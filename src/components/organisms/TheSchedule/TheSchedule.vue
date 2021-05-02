@@ -14,7 +14,13 @@
             <div class="TheSchedule__calendar-day" v-for="(day, i) in months[4].days" :key="`dayOfMonth${i}`">
                 {{ day }}
                 <div v-if="checkDateInDataNonEmpty(day)">
-                    <base-reminder v-for="reminder in reminders(day)" :key="reminder.id" :title="reminder.title"/>
+                    <base-reminder 
+                        v-for="reminder in reminders(day)" 
+                        :key="reminder.id" 
+                        :title="reminder.title"
+                        :color="reminder.color"
+                        @click="editReminder(reminder)"
+                    />
                 </div>
             </div>
         </div>
@@ -33,15 +39,16 @@ import { BaseReminder } from '@/components/atoms'
 export default {
     name: 'TheSchedule',
     components: { BaseReminder },
+    emits: ['edit'],
     data() {
         return {
             weeksDays,
             months,
-            baseDate: '2021-05-01' // Make dynamic this field
+            baseDate: '05/01/2021' // Make dynamic this field
         }
     },
     computed: {
-        ...mapGetters(['checkDateInData', 'getRemindersByDay']),
+        ...mapGetters(['hasDateInData', 'getRemindersByDay']),
         setFirstDateWeekDay() {
             return new Date(this.baseDate).getDay()
         },
@@ -54,10 +61,13 @@ export default {
     },
     methods: {
         checkDateInDataNonEmpty(day) {
-            return this.checkDateInData({ month: 4, date: day}) > 0
+            return this.hasDateInData(`5/${day}/2021`)
         },
         reminders(day) {
-            return this.getRemindersByDay({ month: 4, date: day}).reminders
+            return this.getRemindersByDay(`5/${day}/2021`)
+        },
+        editReminder(value) {
+            this.$emit('edit', value)
         }
     }
 }
