@@ -55,8 +55,9 @@ export default {
 
 <style lang="scss" scoped>
 .Home {
-  width: 100vw;
+  width: 1146px;
   height: 100vh;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: $space-xl;

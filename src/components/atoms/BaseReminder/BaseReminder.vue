@@ -14,13 +14,13 @@ export default {
         },
         color: {
             type: String,
-            default: '#000'
+            default: '#1d252c'
         }
     },
     emits: ['click'],
     computed: {
         BaseReminderStyles() {
-            return `background: ${this.color}`
+            return `background: ${this.color ? this.color : '#1d252c'}`
         }
     },
     methods: {
@@ -35,5 +35,12 @@ export default {
 .BaseReminder {
     color: $color-white;
     cursor: pointer;
+    font-size: 13px;
+    border-radius: 3px;
+    margin-bottom: $space-xs;
+    padding: $space-xs;
+    &:hover {
+        filter: brightness(90%) contrast(150%);
+    }
 }
 </style>

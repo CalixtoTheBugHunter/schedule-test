@@ -76,8 +76,12 @@ export default {
 <style lang="scss" scoped>
 .TheSchedule {
     color: $color-primary;
+    h3 {
+        font-size: 32px;
+        font-weight: 400;
+    }
     &__week {
-        background-color: $color-light;
+        background-color: $color-dark;
         display: flex;
         gap: 1px;
         width: 708px;
@@ -88,7 +92,7 @@ export default {
         }
     }
     &__calendar {
-        background-color: $color-light;
+        background-color: $color-dark;
         display: flex;
         gap: 1px;
         flex-flow: wrap;
@@ -103,7 +107,9 @@ export default {
         &-day {
             width: 100px;
             height: 100px;
-            background: $color-white;
+            padding: $space-xs;
+            background: $color-gray;
+            overflow: hidden;
         }
     }
 }
