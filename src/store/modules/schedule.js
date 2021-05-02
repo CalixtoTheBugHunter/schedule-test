@@ -13,6 +13,10 @@ const getters = {
     },
     hasReminderId: (state) => (value) => {
         return state.data[value.date]?.filter( item => item.id === value.result.id).length !== 0
+    },
+    sheduleLength: (state) => {
+        const LENGTHS = Object.keys(state.data).map( item => state.data[item].length )
+        return LENGTHS.reduce((a, b) => a + b, 0)
     }
 }
 

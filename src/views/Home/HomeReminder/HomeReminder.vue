@@ -3,7 +3,7 @@
         <base-input v-model="title" placeholder="Untitled" maxlength="30"/>
         <base-datepicker v-model="date" placeholder="Date" />
         <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
-        <reminder-weather :value="weather" />
+        <reminder-weather :value="weather" v-if="weather?.main" />
         <base-input v-model="color" placeholder="Color" />
         <base-button label="Save reminder" @click="onSaveReminderClick"/>
     </section>
@@ -15,7 +15,6 @@ const { mapGetters, mapActions } = createNamespacedHelpers('schedule')
 import { BaseButton, BaseDatepicker, BaseInput } from '@/components/atoms'
 import ReminderWeather from './HomeReminder.weather'
 
-import { uuid } from 'vue-uuid'
 import api from '@/api/weather'
 
 export default {
@@ -41,7 +40,7 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['hasDateInData', 'hasReminderId']),
+        ...mapGetters(['hasDateInData', 'hasReminderId', 'sheduleLength']),
         day() {
             return this.date ? Intl.DateTimeFormat('en-US').format(this.date) : null
         },
@@ -64,15 +63,16 @@ export default {
             'deleteReminder'
         ]),
         setUniqueId() {
-            this.uniqueId = this.id ? this.id : uuid.v1()
+            this.uniqueId = this.id ? this.id : this.sheduleLength
         },
         setEditData() {
-            if(this.editData !== {}) {
+            if(this.editData?.title) {
                 this.title = this.editData.title
                 this.date = this.editData.date
                 this.oldDate = this.editData.date
                 this.city = this.editData.city
                 this.color = this.editData.color
+                this.searchWeather()
             }
         },
         async searchWeather() {
