@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .BaseButton {
-  height: 40px;
+  height: 32px;
   -webkit-appearance: none;
   display: flex;
   background: inherit;
@@ -51,14 +51,14 @@ export default {
   position: relative;
   white-space: nowrap;
   background: $color-primary;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 0 none;
   &:hover {
     filter: brightness(90%) contrast(150%);
   }
   &__Text {
     font-size: 16px;
-    color: $color-white;
+    color: $color-black;
     text-align: center;
     display: block;
     width: 100%;
