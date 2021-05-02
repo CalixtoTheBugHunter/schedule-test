@@ -1,9 +1,12 @@
-$color-primary: rgb(30, 123, 177);
+$color-primary: #40F99B;
+$color-secondary: #9D69A3;
+$color-danger: #E85D75;
 
-$color-white: white;
-$color-light: #C9C9C9;
-$color-dark: #3C3C3C;
-$color-black: #000;
+$color-white: #F5FBEF;
+$color-light: #65798b;
+$color-gray: #61707D;
+$color-dark: #3c4a57;
+$color-black: #1d252c;
 
 @mixin gradient($deg, $color1, $color2) {
   background: $color1;
