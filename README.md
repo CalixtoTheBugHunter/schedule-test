@@ -1,4 +1,4 @@
-# Demo Schedule
+# Personal Schedule
 
 ![project preview](/public/screenshot.png "Project preview").
 ## Documentation
