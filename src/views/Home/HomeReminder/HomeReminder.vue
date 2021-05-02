@@ -2,7 +2,8 @@
     <section class="HomeReminder">
         <base-input v-model="title" placeholder="Untitled" maxlength="30"/>
         <base-datepicker v-model="date" placeholder="Date" />
-        <base-input v-model="city" placeholder="City" />
+        <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
+        <reminder-weather :value="weather" />
         <base-input v-model="color" placeholder="Color" />
         <base-button label="Save reminder" @click="onSaveReminderClick"/>
     </section>
@@ -12,10 +13,13 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters, mapActions } = createNamespacedHelpers('schedule')
 import { BaseButton, BaseDatepicker, BaseInput } from '@/components/atoms'
+import ReminderWeather from './HomeReminder.weather'
+
 import { uuid } from 'vue-uuid'
+import api from '@/api/weather'
 
 export default {
-    components: { BaseButton, BaseDatepicker, BaseInput },
+    components: { BaseButton, BaseDatepicker, BaseInput, ReminderWeather },
     name: 'HomeReminder',
     props: {
         id: [String, Number],
@@ -27,6 +31,7 @@ export default {
     emits: ['close'],
     data() {
         return {
+            weather: {},
             uniqueId: this.id,
             title: '',
             date: null,
@@ -69,6 +74,12 @@ export default {
                 this.city = this.editData.city
                 this.color = this.editData.color
             }
+        },
+        async searchWeather() {
+            await api.getWeather(this.city)
+                .then( result => this.weather = result.data.weather[0])
+                .catch( () => this.weather = {})
+            
         },
         async onSaveReminderClick() {
             if(this.date) {
