@@ -1,7 +1,10 @@
 <template>
   <div class="Home">
     <section class="Home__schedule">
-      <base-button label="New reminder" @click="onNewReminderClick" />
+      <header class="Home__schedule-header">
+        <h1>Personal Schedule</h1>
+        <base-button label="New reminder" @click="onNewReminderClick" />
+      </header>
       <the-schedule @edit="onEdit($event)" />
     </section>
     <section class="Home__settings">
@@ -56,9 +59,31 @@ export default {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 300px;
+  gap: $space-xl;
+  background-color: $color-dark;
+  align-items: center;
+  
+
+  &__schedule {
+    justify-self: end;
+    &-header {
+      margin-bottom: $space-xl;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        font-size: 3rem;
+        font-weight: 300;
+        color: $color-white;
+      }
+    }
+    
+  }
 
   &__settings {
-    background: $color-light;
+    background: $color-black;
+    height: 100vh;
+    width: 100%;
   }
 }
 </style>
