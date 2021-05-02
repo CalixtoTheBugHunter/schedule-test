@@ -1,7 +1,7 @@
 <template>
     <p class="ReminderWeather">
-        {{ value.main }}
         <img :src="`http://openweathermap.org/img/w/${value.icon}.png`" />
+        {{ value.main }}
     </p>
 </template>
 
@@ -19,6 +19,12 @@ export default {
 
 <style lang="scss" scoped>
 .ReminderWeather {
-    color: $color-primary;
+    background: $color-gray;
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+    color: $color-white;
 }
 </style>

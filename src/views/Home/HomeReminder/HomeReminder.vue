@@ -1,6 +1,6 @@
 <template>
     <section class="HomeReminder">
-        <base-input v-model="title" placeholder="Untitled" maxlength="30"/>
+        <base-input is-large v-model="title" placeholder="Untitled" maxlength="30"/>
         <base-datepicker v-model="date" placeholder="Date" />
         <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
         <reminder-weather :value="weather" v-if="weather?.main" />
