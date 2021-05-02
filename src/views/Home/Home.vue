@@ -58,7 +58,7 @@ export default {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 340px;
   gap: $space-xl;
   background-color: $color-dark;
   align-items: center;

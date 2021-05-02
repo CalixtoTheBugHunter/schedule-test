@@ -35,8 +35,22 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.v3dp__datepicker {
+    width: 100%;
+    input {
+        padding: $space-sm 0;
+        width: 100%;
+        background: transparent;
+        color: $color-white;
+        font-size: 16px;
+    }
+}
+</style>
+
 <style lang="scss" scoped>
 .BaseDatepicker {
+    width: 100%;
     color: $color-primary;
     &__label {
         color: $color-light;
