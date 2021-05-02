@@ -35,6 +35,7 @@ export default {
       this.showHomeReminder = value
     },
     onNewReminderClick() {
+      this.editData = {}
       this.handleShowReminder(true)
     },
     emittedHomeReminder() {
