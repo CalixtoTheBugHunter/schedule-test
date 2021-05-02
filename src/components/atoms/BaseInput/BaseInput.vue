@@ -31,6 +31,10 @@ export default {
             type: String,
             default: ''
         },
+        isLarge: {
+            type: Boolean,
+            default: false
+        },
         isInvalid: {
             type: Boolean,
             default: false
@@ -43,7 +47,10 @@ export default {
     emits: ['update:modelValue'],
     computed: {
         BaseInputClass() {
-            return { 'BaseInput--invalid': !!this.isInvalid }
+            return { 
+                'BaseInput--invalid': !!this.isInvalid,
+                'BaseInput--large': this.isLarge
+            }
         },
     },
     methods: {
@@ -67,6 +74,11 @@ export default {
         color: $color-dark;
         .BaseInput__input {
             background-color: $color-light;
+        }
+    }
+    &--large {
+        .BaseInput__input {
+            font-size: 20px;
         }
     }
     &__label {
