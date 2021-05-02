@@ -5,7 +5,14 @@
         <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
         <reminder-weather :value="weather" v-if="weather?.main" />
         <base-input v-model="color" placeholder="Color" />
-        <base-button theme="secondary" label="Save reminder" @click="onSaveReminderClick"/>
+        <div class="HomeReminder__send">
+            <span v-if="isEdit" @click="onDeleteReminder()">Delete</span>
+            <base-button
+                label="Save reminder"
+                @click="onSaveReminderClick"
+                :disabled="!validations"
+            />
+        </div>
     </section>
 </template>
 
@@ -49,6 +56,9 @@ export default {
         },
         validations() {
             return this.title !== '' && this.city !== ''
+        },
+        isEdit() {
+            return this.editData?.title
         }
     },
     mounted() {
@@ -66,7 +76,7 @@ export default {
             this.uniqueId = this.id ? this.id : this.sheduleLength
         },
         setEditData() {
-            if(this.editData?.title) {
+            if(this.isEdit) {
                 this.title = this.editData.title
                 this.date = this.editData.date
                 this.oldDate = this.editData.date
@@ -113,6 +123,11 @@ export default {
             this.$emit('close')
         },
 
+        onDeleteReminder() {
+            this.deleteReminder({date: this.oldDay, result: { id: this.uniqueId }})
+            this.$emit('close')
+        },
+
         updateOrCreateDate() {
             if(!this.hasDateInData(this.day))
                 this.createDay(this.day)
@@ -130,5 +145,18 @@ export default {
     gap: $space-md;
     width: 100%;
     align-items: flex-end;
+    &__send {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            color: $color-gray;
+            cursor: pointer;
+            &:hover {
+                color: $color-danger;
+            }
+        }
+    }
 }
 </style>

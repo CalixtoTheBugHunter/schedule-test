@@ -35,6 +35,9 @@ const actions = {
     deleteReminder({ commit }, payload) {
         commit('REMOVE_REMINDER', payload)
     },
+    deleteAll({commit}) {
+        commit('DELETE_ALL')
+    }
 }
 
 // mutations
@@ -48,6 +51,9 @@ const mutations = {
     REMOVE_REMINDER( state, payload) {
         let index = state.data[payload.date].findIndex( item => item.id === payload.result.id )
         state.data[payload.date].splice(index, 1)
+    },
+    DELETE_ALL( state ) {
+        state.data = {}
     }
 }
 

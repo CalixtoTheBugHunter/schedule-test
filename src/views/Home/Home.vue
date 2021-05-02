@@ -6,6 +6,12 @@
         <base-button label="New reminder" @click="onNewReminderClick" />
       </header>
       <the-schedule @edit="onEdit($event)" />
+      <span 
+        v-if="sheduleLength > 0"
+        @click="onDeleteAll"
+        class="Home__schedule-deleteAll">
+        Delete All
+      </span>
     </section>
     <section class="Home__settings">
       <home-reminder 
@@ -18,6 +24,8 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters, mapActions } = createNamespacedHelpers('schedule')
 import { BaseButton } from '@/components/atoms'
 import { TheSchedule } from '@/components/organisms'
 import HomeReminder from './HomeReminder/HomeReminder.vue'
@@ -33,7 +41,14 @@ export default {
       editId: null
     }
   },
+  computed: {
+    ...mapGetters(['sheduleLength']),
+  },
   methods: {
+    ...mapActions(['deleteAll']),
+    onDeleteAll() {
+      this.deleteAll()
+    },
     handleShowReminder(value) {
       this.showHomeReminder = value
     },
@@ -76,6 +91,15 @@ export default {
         font-size: 3rem;
         font-weight: 300;
         color: $color-white;
+      }
+    }
+    &-deleteAll {
+      margin-top: $space-md;
+      display: block;
+      color: $color-gray;
+      cursor: pointer;
+      &:hover {
+          color: $color-danger;
       }
     }
     

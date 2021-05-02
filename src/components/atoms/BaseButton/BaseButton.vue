@@ -39,7 +39,9 @@ export default {
   },
   computed: {
     BaseButtonClasses() {
-      return [`BaseButton--${this.theme}`]
+      return [`BaseButton--${this.theme}`, {
+        'BaseButton--disabled': this.disabled
+      }]
     }
   },
   methods: {
@@ -78,6 +80,10 @@ export default {
     text-align: center;
     display: block;
     width: 100%;
+  }
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.4;
   }
 }
 </style>

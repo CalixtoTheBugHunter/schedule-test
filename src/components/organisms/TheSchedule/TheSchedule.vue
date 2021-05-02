@@ -1,6 +1,16 @@
 <template>
     <div class="TheSchedule">
-        <h3>May</h3>
+        <div class="TheSchedule__months">
+            <font-awesome-icon :icon="icon" @click="toggleMonthList" />
+            <h3>{{ months[selectedMonthId].name }}</h3>
+            <div class="TheSchedule__months-list" v-if="showMonthList">
+                <ul>
+                    <li v-for="month in months" :key="month.id" @click="selectMonth(month.id)">
+                        {{ month.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="TheSchedule__week">
             <div class="TheSchedule__week-day" v-for="day in weeksDays" :key="day.id">
                 {{ day.name }}
@@ -11,7 +21,7 @@
                 class="TheSchedule__calendar-span" 
                 v-if="showCalendarSpan" 
                 :style="setCalendarSpanSize" />
-            <div class="TheSchedule__calendar-day" v-for="(day, i) in months[4].days" :key="`dayOfMonth${i}`">
+            <div class="TheSchedule__calendar-day" v-for="(day, i) in months[selectedMonthId].days" :key="`dayOfMonth${i}`">
                 {{ day }}
                 <div v-if="checkDateInDataNonEmpty(day)">
                     <base-reminder 
@@ -36,15 +46,20 @@ import months from './utils/months'
 
 import { BaseReminder } from '@/components/atoms'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+
 export default {
     name: 'TheSchedule',
-    components: { BaseReminder },
+    components: { BaseReminder,  FontAwesomeIcon },
     emits: ['edit'],
     data() {
         return {
+            icon: faChevronDown,
             weeksDays,
             months,
-            baseDate: '05/01/2021' // Make dynamic this field
+            selectedMonthId: 4,
+            showMonthList: false
         }
     },
     computed: {
@@ -53,18 +68,31 @@ export default {
             return new Date(this.baseDate).getDay()
         },
         showCalendarSpan() {
-            return this.setFirstDateWeekDay < 6
+            return this.setFirstDateWeekDay < 7
         },
         setCalendarSpanSize() {
-            return `width: calc(100px * ${this.setFirstDateWeekDay + 1} + ${this.setFirstDateWeekDay}px)`
+            return `width: calc((100px * ${this.setFirstDateWeekDay}) + ${this.setFirstDateWeekDay - 1}px)`
+        },
+        monthNumber() {
+            return this.selectedMonthId + 1
+        },
+        baseDate() {
+            return `${this.monthNumber}/1/2021` // Make dynamic this field
         }
     },
     methods: {
+        toggleMonthList() {
+            this.showMonthList = !this.showMonthList
+        },
+        selectMonth(id) {
+            this.selectedMonthId = id
+            this.showMonthList = false
+        },
         checkDateInDataNonEmpty(day) {
-            return this.hasDateInData(`5/${day}/2021`)
+            return this.hasDateInData(`${this.monthNumber}/${day}/2021`)
         },
         reminders(day) {
-            return this.getRemindersByDay(`5/${day}/2021`)
+            return this.getRemindersByDay(`${this.monthNumber}/${day}/2021`)
         },
         editReminder(value) {
             this.$emit('edit', value)
@@ -75,10 +103,38 @@ export default {
 
 <style lang="scss" scoped>
 .TheSchedule {
-    color: $color-primary;
+    color: $color-light;
     h3 {
         font-size: 32px;
         font-weight: 400;
+    }
+    &__months {
+        color: $color-primary;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: $space-md;
+        margin-bottom: $space-md;
+        svg {
+            cursor: pointer;
+        }
+        &-list {
+            background: $color-black;
+            position: absolute;
+            top: 32px;
+            ul {
+                padding: $space-md;
+                margin: 0;
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    color: $color-white;
+                    &:hover {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
     }
     &__week {
         background-color: $color-dark;
@@ -109,7 +165,8 @@ export default {
             height: 100px;
             padding: $space-xs;
             background: $color-gray;
-            overflow: hidden;
+            overflow: auto;
+            color: $color-dark;
         }
     }
 }
