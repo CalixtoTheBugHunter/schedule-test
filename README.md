@@ -78,7 +78,7 @@ The global styles, variables and SCSS mixins are in folder assets/scss.
 *main.scss* is loaded in App.vue.
 Automatically the file *scoped.scss* is exported and imported in every single file. We have variables for colors, spacing, mixins, z-index.
 
-## Componentização
+## Components
 
 As components patters we are using Atomic Design in folder */components*.
 We have some preffix to indentify the component type.
@@ -87,7 +87,7 @@ We have some preffix to indentify the component type.
 * Molecules (no preffix)
 * Organisms (The)
 
-## Testes unitários
+## Unit Tests
 
 Unit tests coverage: 44%
 We are using snapshots tests too.
