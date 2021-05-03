@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const KEY = 'fab26da6357e5f357c5bc87705fc3ca0'
+const KEY = process.env.VUE_APP_OPEN_WEATHER_KEY
 
 export default {
     async getWeather(city) {
