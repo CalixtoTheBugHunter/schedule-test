@@ -5,7 +5,8 @@
 
 Welcome to this project. It's related to a schedule system, with custom reminders.
 
-Tech specs: Vue 3, Vuex, Router, Eslint + Prettier, Jest
+Tech specs: Vue 3, Vuex, Router, Eslint + Prettier, Jest.
+
 Styles: SCSS with sass-loader
 
 ## What is done
