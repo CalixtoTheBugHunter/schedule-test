@@ -80,11 +80,11 @@ Automatically the file *scoped.scss* is exported and imported in every single fi
 
 ## Components
 
-As components patters we are using Atomic Design in folder */components*.
-We have some preffix to indentify the component type.
+As components patterns we are using Atomic Design in folder */components*.
+We have some prefix to indentify the component type.
 
 * Atoms (Base)
-* Molecules (no preffix)
+* Molecules (no prefix)
 * Organisms (The)
 
 ## Unit Tests
@@ -92,19 +92,19 @@ We have some preffix to indentify the component type.
 Unit tests coverage: 44%
 We are using snapshots tests too.
 
-### Test
+### Tests
 ```
 yarn test
 ```
 
-### Tests with auto-reload
+### Tests with hot-reloads
 ```
 yarn test:watch
 ```
 
 ## API mocked
 
-For use openweathermap api we are usign Axios in folder */api*.
+For use *openweathermap* api we are usign Axios in folder */api*.
 
 ## Next Steps
 
