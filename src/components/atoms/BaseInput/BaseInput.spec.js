@@ -1,9 +1,13 @@
 /* eslint-disable no-undef */
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import BaseInput from './BaseInput'
 
 describe('BaseInput', () => {
-  const WRAPPER = shallowMount(BaseInput)
+  const WRAPPER = mount(BaseInput, {
+    props: {
+      modelValue: 'example'
+    }
+  })
 
   it('Component exists', () => {
     expect(WRAPPER.exists()).toBe(true)

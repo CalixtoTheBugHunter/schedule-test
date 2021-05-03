@@ -1,6 +1,6 @@
 # Personal Schedule
 
-![project preview](/public/screenshot.png "Project preview").
+![project preview](/public/screenshot.png "Project preview")
 ## Documentation
 
 Welcome to this project. It's related to a schedule system, with custom reminders.
@@ -89,7 +89,7 @@ We have some preffix to indentify the component type.
 
 ## Testes unitários
 
-Unit tests coverage: 40%
+Unit tests coverage: 44%
 We are using snapshots tests too.
 
 ### Test
@@ -113,6 +113,7 @@ What I would to do in next steps
 * Add a colorpicker
 * Add Axios interceptors
 * Modeling a service pattern for api calls
+* Complete integration with Vue Test Utils 2
 * Test E2E with Cypress
 * Storybook documentation
 * Expand the schedule for handle with years

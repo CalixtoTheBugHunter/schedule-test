@@ -44,7 +44,7 @@ export default {
             default: ''
         }
     },
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'enter'],
     computed: {
         BaseInputClass() {
             return { 

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather Component not changed 1`] = `<p class="ReminderWeather"><img src="http://openweathermap.org/img/w/undefined.png"> </p>`;

@@ -1,15 +1,41 @@
 /* eslint-disable no-undef */
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Home from './Home'
+import { createStore } from 'vuex'
 
 describe('Home', () => {
-  const WRAPPER = shallowMount(Home)
+  let wrapper, store
+
+  beforeEach(() => {
+
+    store = createStore({
+      modules: {
+        schedule: {
+          namespaced: true,
+          state() {
+            return {
+              data: {}
+            }
+          },
+          getters: {
+            sheduleLength: () => 0
+          }
+        }
+      }
+    })
+
+    wrapper = mount(Home, {
+      global: {
+        plugins: [store]
+      }
+    })
+  })
 
   it('Component exists', () => {
-    expect(WRAPPER.exists()).toBe(true)
+    expect(wrapper.exists()).toBe(true)
   })
 
   it('Component not changed', () => {
-    expect(WRAPPER.html()).toMatchSnapshot()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

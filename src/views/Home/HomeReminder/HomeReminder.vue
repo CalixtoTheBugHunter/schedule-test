@@ -1,6 +1,6 @@
 <template>
     <section class="HomeReminder">
-        <base-input is-large v-model="title" placeholder="Untitled" maxlength="30"/>
+        <base-input id="title" is-large v-model="title" placeholder="Untitled" maxlength="30"/>
         <base-datepicker v-model="date" placeholder="Date" />
         <base-input v-model="city" placeholder="City" @blur="searchWeather()"/>
         <reminder-weather :value="weather" v-if="weather?.main" />
@@ -8,6 +8,7 @@
         <div class="HomeReminder__send">
             <span v-if="isEdit" @click="onDeleteReminder()">Delete</span>
             <base-button
+                id="save"
                 label="Save reminder"
                 @click="onSaveReminderClick"
                 :disabled="!validations"

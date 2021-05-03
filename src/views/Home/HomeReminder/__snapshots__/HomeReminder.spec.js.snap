@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeReminder Component not changed 1`] = `
+<section class="HomeReminder">
+  <div class="BaseInput BaseInput--large" id="title" placeholder="Untitled" maxlength="30">
+    <!--v-if--><input class="BaseInput__input" id="title" placeholder="Untitled" maxlength="30">
+    <!--v-if-->
+  </div>
+  <div class="BaseDatepicker" placeholder="Date">
+    <!--v-if-->
+    <div class="v3dp__datepicker"><input type="text" readonly="" placeholder="Date" tabindex="0">
+      <div class="v3dp__popout" style="--popout-column-definition: repeat(3, 1fr); display: none;" data-v-2e128338="">
+        <div class="v3dp__heading" data-v-2e128338=""><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M-9 16V-8h24v24z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 0L1 4l4 4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button><span class="v3dp__heading__center" data-v-2e128338="">2020 - 2029</span><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M15-8v24H-9V-8z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M1 8l4-4-4-4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button></div>
+        <div class="v3dp__body" data-v-2e128338="">
+          <!--v-if-->
+          <div class="v3dp__elements" data-v-2e128338=""><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2020</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2021</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2022</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2023</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2024</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2025</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2026</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2027</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2028</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">2029</span></button></div>
+        </div>
+      </div>
+      <div class="v3dp__popout" style="--popout-column-definition: repeat(3, 1fr); display: none;" headingformat="LLLL yyyy" data-v-2e128338="">
+        <div class="v3dp__heading" data-v-2e128338=""><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M-9 16V-8h24v24z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 0L1 4l4 4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button><button class="v3dp__heading__center" data-v-2e128338="">2021</button><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M15-8v24H-9V-8z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M1 8l4-4-4-4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button></div>
+        <div class="v3dp__body" data-v-2e128338="">
+          <!--v-if-->
+          <div class="v3dp__elements" data-v-2e128338=""><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Jan</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Feb</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Mar</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Apr</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">May</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Jun</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Jul</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Aug</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Sep</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Oct</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Nov</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">Dec</span></button></div>
+        </div>
+      </div>
+      <div class="v3dp__popout" style="--popout-column-definition: repeat(7, 1fr); display: none;" data-v-2e128338="">
+        <div class="v3dp__heading" data-v-2e128338=""><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M-9 16V-8h24v24z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 0L1 4l4 4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button><button class="v3dp__heading__center" data-v-2e128338="">May 2021</button><button class="v3dp__heading__button" data-v-2e128338=""><svg class="v3dp__heading__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 8" data-v-2e128338="" data-v-2e128338-s="">
+              <g fill="none" fill-rule="evenodd" data-v-2e128338="" data-v-2e128338-s="">
+                <path stroke="none" d="M15-8v24H-9V-8z" data-v-2e128338="" data-v-2e128338-s=""></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M1 8l4-4-4-4" data-v-2e128338="" data-v-2e128338-s=""></path>
+              </g>
+            </svg></button></div>
+        <div class="v3dp__body" data-v-2e128338="">
+          <div class="v3dp__subheading" data-v-2e128338=""><span data-v-2e128338-s="">Mon</span><span data-v-2e128338-s="">Tue</span><span data-v-2e128338-s="">Wed</span><span data-v-2e128338-s="">Thu</span><span data-v-2e128338-s="">Fri</span><span data-v-2e128338-s="">Sat</span><span data-v-2e128338-s="">Sun</span></div>
+          <hr class="v3dp__divider" data-v-2e128338="">
+          <div class="v3dp__elements" data-v-2e128338=""><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">26</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">27</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">28</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">29</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">30</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">01</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">02</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">03</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">04</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">05</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">06</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">07</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">08</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">09</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">10</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">11</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">12</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">13</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">14</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">15</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">16</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">17</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">18</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">19</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">20</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">21</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">22</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">23</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">24</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">25</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">26</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">27</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">28</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">29</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">30</span></button><button class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">31</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">01</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">02</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">03</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">04</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">05</span></button><button disabled="" class="" data-v-2e128338="" data-v-2e128338-s=""><span data-v-2e128338="" data-v-2e128338-s="">06</span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="BaseInput" placeholder="City">
+    <!--v-if--><input class="BaseInput__input" placeholder="City">
+    <!--v-if-->
+  </div>
+  <!--v-if-->
+  <div class="BaseInput" placeholder="Color">
+    <!--v-if--><input class="BaseInput__input" placeholder="Color">
+    <!--v-if-->
+  </div>
+  <div class="HomeReminder__send">
+    <!--v-if--><button type="button" id="save" class="BaseButton BaseButton--primary BaseButton--disabled" disabled=""><span class="BaseButton__Text">Save reminder</span></button>
+  </div>
+</section>
+`;
