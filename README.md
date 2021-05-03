@@ -29,7 +29,7 @@ entered day and time. Also, include a city.
 * Functionality to delete one or ALL the reminders for a specific day
 ## Project setup
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -42,7 +42,7 @@ yarn serve
 yarn build
 ```
 
-## How works with the components
+## How components works
 
 The file structure is with HTML, scripts and SCSS in the same file, using the maximum of clean code. For create CSS classes we are using BEMCSS model. In script, we use less calls in DOM and more Vue reactivity. Other good practice is to write logical parts only in script and using computed functions instead of HTML section.
 
