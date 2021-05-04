@@ -3,7 +3,7 @@
 ![project preview](/public/screenshot.png "Project preview")
 ## Documentation
 
-Welcome to this project. It's related to a schedule system, with custom reminders.
+Welcome to this project. It's related to a schedule system, with customized reminders.
 
 Tech specs: Vue 3, Vuex, Router, Eslint + Prettier, Jest.
 
@@ -45,7 +45,7 @@ yarn build
 
 ## How components works
 
-The file structure is with HTML, scripts and SCSS in the same file, using the maximum of clean code. For create CSS classes we are using BEMCSS model. In script, we use less calls in DOM and more Vue reactivity. Other good practice is to write logical parts only in script and using computed functions instead of HTML section.
+Each component has HTML, scripts and SCSS in the same file, using the maximum of clean code. To create CSS classes we are using BEMCSS model. In script, we use fewer calls in DOM and more Vue reactivity. Another good practice is to write logical parts only in script and using computed functions instead of HTML section.
 
 For model box we are using CSS grid and flexbox.
 
@@ -76,7 +76,9 @@ export default {
 ## Global Styles
 
 The global styles, variables and SCSS mixins are in folder assets/scss.
+
 *main.scss* is loaded in App.vue.
+
 Automatically the file *scoped.scss* is exported and imported in every single file. We have variables for colors, spacing, mixins, z-index.
 
 ## Components
@@ -105,7 +107,7 @@ yarn test:watch
 
 ## API mocked
 
-For use *openweathermap* api we are usign Axios in folder */api*.
+To use *openweathermap* api we are usign Axios in folder */api*.
 
 ## Next Steps
 
@@ -113,7 +115,7 @@ What I would to do in next steps
 
 * Add a colorpicker
 * Add Axios interceptors
-* Modeling a service pattern for api calls
+* Model a service pattern for api calls
 * Complete integration with Vue Test Utils 2
 * Test E2E with Cypress
 * Storybook documentation
