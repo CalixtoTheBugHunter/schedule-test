@@ -113,10 +113,11 @@ To use *openweathermap* api we are usign Axios in folder */api*.
 
 What I would to do in next steps
 
-* Add a colorpicker
-* Add Axios interceptors
-* Model a service pattern for api calls
-* Complete integration with Vue Test Utils 2
-* Test E2E with Cypress
-* Storybook documentation
-* Expand the schedule for handle with years
+[ ] Add a colorpicker
+[ ] Add validations messages
+[ ] Change unit tests from vue-test-utils to testing library
+[ ] Test E2E with Cypress
+[ ] Add Axios interceptors
+[ ] Model a service pattern for api calls
+[ ] Storybook documentation
+[ ] Expand the schedule for handle with years
